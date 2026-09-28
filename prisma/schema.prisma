@@ -479,7 +479,7 @@ model AuditLog {
   id         String   @id @default(uuid())
   actorId    String?  @map("actor_id")
   actorLabel String   @map("actor_label")
-  action     String
+  action     String   @db.VarChar(100)
   entityType String   @map("entity_type")
   entityId   String   @map("entity_id")
   metadata   Json?
