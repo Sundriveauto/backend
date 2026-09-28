@@ -238,7 +238,7 @@ model Escrow {
   amount          Decimal      @db.Decimal(39, 0)
   platformFee     Decimal?     @map("platform_fee") @db.Decimal(39, 0)
   status          EscrowStatus @default(LOCKED)
-  disputedBy      String?      @map("disputed_by")
+  disputedBy      String?      @map("disputed_by") @db.VarChar(56)
   disputedAt      DateTime?    @map("disputed_at")
   releasedAt      DateTime?    @map("released_at")
   refundedAt      DateTime?    @map("refunded_at")
